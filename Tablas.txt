@@ -1,0 +1,203 @@
+use Escolar_1
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Maestro](
+	[IdMaestro] [varchar](7) NOT NULL,
+	[IdUsuario] [varchar](7) NOT NULL,
+	[NomMaestro] [varchar](50) NOT NULL,
+	[Apellidos] [varchar](50) NOT NULL,
+	[FechaNac] [date] NOT NULL,
+ CONSTRAINT [PK_Maestro] PRIMARY KEY CLUSTERED 
+(
+	[IdMaestro] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Materia]    Script Date: 10/07/2017 11:32:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Materia](
+	[IdMateria] [varchar](7) NOT NULL,
+	[IdCarrera] [varchar](7) NOT NULL,
+	[MatNom] [varchar](50) NOT NULL,
+	[MatCred] [smallint] NOT NULL,
+	[NumFrecuencia] [smallint] NOT NULL,
+	[NumSemestre] [varchar](7) NOT NULL,
+ CONSTRAINT [PK_Materia] PRIMARY KEY CLUSTERED 
+(
+	[IdMateria] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Turno]    Script Date: 10/07/2017 11:32:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Turno](
+	[IdTurno] [varchar](1) NOT NULL,
+	[TipoTurno] [varchar](1) NOT NULL,
+ CONSTRAINT [PK_Turno] PRIMARY KEY CLUSTERED 
+(
+	[IdTurno] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Titulo]    Script Date: 10/07/2017 11:32:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Titulo](
+	[IdTitulo] [varchar](7) NOT NULL,
+	[nomTitulo] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_Titulo] PRIMARY KEY CLUSTERED 
+(
+	[IdTitulo] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Salon]    Script Date: 10/07/2017 11:32:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Salon](
+	[IdSalon] [varchar](7) NOT NULL,
+	[Capacidad] [smallint] NOT NULL,
+ CONSTRAINT [PK_Salon] PRIMARY KEY CLUSTERED 
+(
+	[IdSalon] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Materia_Maestro]    Script Date: 10/07/2017 11:32:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Materia_Maestro](
+	[IdMateriaMaestro] [varchar](7) NOT NULL,
+	[IdMateria] [varchar](7) NOT NULL,
+	[IdMaestro] [varchar](7) NOT NULL,
+ CONSTRAINT [PK_Materia_Maestro] PRIMARY KEY CLUSTERED 
+(
+	[IdMateriaMaestro] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Maestro_Titulo]    Script Date: 10/07/2017 11:32:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Maestro_Titulo](
+	[IdMaestro] [varchar](7) NOT NULL,
+	[IdTitulo] [varchar](7) NOT NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Grupo]    Script Date: 10/07/2017 11:32:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Grupo](
+	[IdGrupo] [varchar](7) NOT NULL,
+	[IdSalon] [varchar](7) NOT NULL,
+	[IdTurmo] [varchar](1) NOT NULL,
+ CONSTRAINT [PK_Grupo] PRIMARY KEY CLUSTERED 
+(
+	[IdGrupo] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Grupo_Materia]    Script Date: 10/07/2017 11:32:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Grupo_Materia](
+	[IdGrupoMateria] [varchar](7) NOT NULL,
+	[IdMateriaMaestro] [varchar](7) NOT NULL,
+	[IdGrupo] [varchar](7) NOT NULL,
+	[Hora] [time](7) NOT NULL,
+	[NumSemestre] [smallint] NOT NULL,
+ CONSTRAINT [PK_Grupo_Materia] PRIMARY KEY CLUSTERED 
+(
+	[IdGrupoMateria] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  ForeignKey [FK_Grupo_Salon]    Script Date: 10/07/2017 11:32:57 ******/
+ALTER TABLE [dbo].[Grupo]  WITH CHECK ADD  CONSTRAINT [FK_Grupo_Salon] FOREIGN KEY([IdSalon])
+REFERENCES [dbo].[Salon] ([IdSalon])
+GO
+ALTER TABLE [dbo].[Grupo] CHECK CONSTRAINT [FK_Grupo_Salon]
+GO
+/****** Object:  ForeignKey [FK_Grupo_Turno]    Script Date: 10/07/2017 11:32:57 ******/
+ALTER TABLE [dbo].[Grupo]  WITH CHECK ADD  CONSTRAINT [FK_Grupo_Turno] FOREIGN KEY([IdTurmo])
+REFERENCES [dbo].[Turno] ([IdTurno])
+GO
+ALTER TABLE [dbo].[Grupo] CHECK CONSTRAINT [FK_Grupo_Turno]
+GO
+/****** Object:  ForeignKey [FK_Grupo_Materia_Grupo]    Script Date: 10/07/2017 11:32:57 ******/
+ALTER TABLE [dbo].[Grupo_Materia]  WITH CHECK ADD  CONSTRAINT [FK_Grupo_Materia_Grupo] FOREIGN KEY([IdGrupo])
+REFERENCES [dbo].[Grupo] ([IdGrupo])
+GO
+ALTER TABLE [dbo].[Grupo_Materia] CHECK CONSTRAINT [FK_Grupo_Materia_Grupo]
+GO
+/****** Object:  ForeignKey [FK_Grupo_Materia_Materia_Maestro]    Script Date: 10/07/2017 11:32:57 ******/
+ALTER TABLE [dbo].[Grupo_Materia]  WITH CHECK ADD  CONSTRAINT [FK_Grupo_Materia_Materia_Maestro] FOREIGN KEY([IdMateriaMaestro])
+REFERENCES [dbo].[Materia_Maestro] ([IdMateriaMaestro])
+GO
+ALTER TABLE [dbo].[Grupo_Materia] CHECK CONSTRAINT [FK_Grupo_Materia_Materia_Maestro]
+GO
+/****** Object:  ForeignKey [FK_Maestro_Titulo_Maestro]    Script Date: 10/07/2017 11:32:57 ******/
+ALTER TABLE [dbo].[Maestro_Titulo]  WITH CHECK ADD  CONSTRAINT [FK_Maestro_Titulo_Maestro] FOREIGN KEY([IdMaestro])
+REFERENCES [dbo].[Maestro] ([IdMaestro])
+GO
+ALTER TABLE [dbo].[Maestro_Titulo] CHECK CONSTRAINT [FK_Maestro_Titulo_Maestro]
+GO
+/****** Object:  ForeignKey [FK_Maestro_Titulo_Titulo]    Script Date: 10/07/2017 11:32:57 ******/
+ALTER TABLE [dbo].[Maestro_Titulo]  WITH CHECK ADD  CONSTRAINT [FK_Maestro_Titulo_Titulo] FOREIGN KEY([IdTitulo])
+REFERENCES [dbo].[Titulo] ([IdTitulo])
+GO
+ALTER TABLE [dbo].[Maestro_Titulo] CHECK CONSTRAINT [FK_Maestro_Titulo_Titulo]
+GO
+/****** Object:  ForeignKey [FK_Materia_Maestro_Maestro]    Script Date: 10/07/2017 11:32:57 ******/
+ALTER TABLE [dbo].[Materia_Maestro]  WITH CHECK ADD  CONSTRAINT [FK_Materia_Maestro_Maestro] FOREIGN KEY([IdMaestro])
+REFERENCES [dbo].[Maestro] ([IdMaestro])
+GO
+ALTER TABLE [dbo].[Materia_Maestro] CHECK CONSTRAINT [FK_Materia_Maestro_Maestro]
+GO
+/****** Object:  ForeignKey [FK_Materia_Maestro_Materia]    Script Date: 10/07/2017 11:32:57 ******/
+ALTER TABLE [dbo].[Materia_Maestro]  WITH CHECK ADD  CONSTRAINT [FK_Materia_Maestro_Materia] FOREIGN KEY([IdMateria])
+REFERENCES [dbo].[Materia] ([IdMateria])
+GO
+ALTER TABLE [dbo].[Materia_Maestro] CHECK CONSTRAINT [FK_Materia_Maestro_Materia]
+GO
