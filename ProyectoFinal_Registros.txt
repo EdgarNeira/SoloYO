@@ -43,9 +43,9 @@ insert into Nivel values (11113, 'Doctorado')
 --------------------------------Carrera-----------------------------
 select*from Carrera
 
-insert into Carrera values (22221, 11111, 'Seguridad en Tecnologias de Información', 8, 'A')
+insert into Carrera values (22221, 11111, 'Seguridad en Tecnologias de InformaciÃ³n', 8, 'A')
 
-insert into Carrera values (22222, 11112, 'Matemáticas', 9, 'A')
+insert into Carrera values (22222, 11112, 'MatemÃ¡ticas', 9, 'A')
 
 insert into Carrera values (22223, 11113, 'Ciencias Computacionales', 8, 'A')
 
@@ -60,36 +60,36 @@ insert into Materia values (33333, 22221, 'Evidencias Digitales', 3, 3 , 2)
 
 insert into Materia values (33334, 22221, 'Normatividad y Regulaciones', 3, 3 , 1)
 ---Materia-Maestria----
-insert into Materia values (33335, 22222, 'Cálculo Diferencial', 5, 5 , 1)
+insert into Materia values (33335, 22222, 'CÃ¡lculo Diferencial', 5, 5 , 1)
 
-insert into Materia values (33336, 22222, 'Cálculo Integral', 4, 5 , 2)
+insert into Materia values (33336, 22222, 'CÃ¡lculo Integral', 4, 5 , 2)
 
-insert into Materia values (33337, 22222, 'Cálculo de Varias Variables', 4, 5 , 3)
+insert into Materia values (33337, 22222, 'CÃ¡lculo de Varias Variables', 4, 5 , 3)
 
-insert into Materia values (33338, 22222, 'Álgebra', 4, 5 , 1)
+insert into Materia values (33338, 22222, 'Ãlgebra', 4, 5 , 1)
 ---Materia-Doctorado----
-insert into Materia values (33339, 22223, 'Administración', 2, 3 , 1)
+insert into Materia values (33339, 22223, 'AdministraciÃ³n', 2, 3 , 1)
 
-insert into Materia values (33340, 22223, 'Programación 1', 4, 3 , 2)
+insert into Materia values (33340, 22223, 'ProgramaciÃ³n 1', 4, 3 , 2)
 
 insert into Materia values (33341, 22223, 'Teoria de Automatas', 4, 3, 3)
 
-insert into Materia values (33342, 22223, 'Matemáticas 1', 4, 3 , 1)
+insert into Materia values (33342, 22223, 'MatemÃ¡ticas 1', 4, 3 , 1)
 
 ---------------------------------Maestro------------------------------
 select*from Maestro
 
-insert into Maestro values (44441, 1777777, 'Marilu', 'Rojas Ramírez', '05-05-1965')
+insert into Maestro values (44441, 1777777, 'Marilu', 'Rojas RamÃ­rez', '05-05-1965')
 
-insert into Maestro values (44442, 2777777, 'Manuel', 'Pecina García', '08-12-1967')
+insert into Maestro values (44442, 2777777, 'Manuel', 'Pecina GarcÃ­a', '08-12-1967')
 
 insert into Maestro values (44443, 3777777, 'Edgar Ivan', 'Neira Garza', '10-18-1978')
 
 insert into Maestro values (44444, 4777777, 'Hector', 'Neira Rosales', '03-14-1990')
 
-insert into Maestro values (44445, 5777777, 'Patricia Angelica', 'Garza Álvarez', '03-07-1979')
+insert into Maestro values (44445, 5777777, 'Patricia Angelica', 'Garza Ãlvarez', '03-07-1979')
 
-insert into Maestro values (44446, 6777777, 'Sergio Yahir', 'Martínez Palma', '02-27-1955')
+insert into Maestro values (44446, 6777777, 'Sergio Yahir', 'MartÃ­nez Palma', '02-27-1955')
 
 -------------------------------Materia_Maestro------------------------
 select*from Materia_Maestro
@@ -216,3 +216,30 @@ select*from Grupo_Alumno
  insert into Grupo_Alumno values (88891, 77781, 1639523)
  
  insert into Grupo_Alumno values (88892, 77782, 1639523)
+ 
+ ------------------------Calificaciones----------------------
+ select * from Calificaciones
+ 
+ insert into Calificaciones values (77771,88881 , 80)
+ 
+ insert into Calificaciones values (77772,88882 , 75)
+ 
+ insert into Calificaciones values (77773,88883 , 65)
+ 
+ insert into Calificaciones values (77774,88884 , 94)
+ 
+ insert into Calificaciones values (77775,88885 , 64)
+ 
+ insert into Calificaciones values (77776,88886 , 73)
+ 
+ insert into Calificaciones values (77777,88887 , 81)
+ 
+ insert into Calificaciones values (77778,88888 , 82)
+ 
+ insert into Calificaciones values (77779,88889 , 94)
+ 
+ insert into Calificaciones values (77780,88890 , 90)
+ 
+ insert into Calificaciones values (77781,88891 , 70)
+ 
+ insert into Calificaciones values (77782,88892 , 98)
