@@ -249,7 +249,7 @@ GO
 ALTER TABLE [dbo].[Calificaciones]  WITH CHECK ADD  CONSTRAINT [FK_Calificaciones_Grupo_Alumno] FOREIGN KEY([IdGrupoAlumno])
 REFERENCES [dbo].[Grupo_Alumno] ([IdGrupoAlumno])
 GO
-ALTER TABLE [dbo].[Calificaciones] CHECK CONSTRAINT [FK_Calificaciones_grupo_alumno]
+ALTER TABLE [dbo].[Calificaciones] CHECK CONSTRAINT [FK_Calificaciones_Grupo_Alumno]
 GO
 /****** Object:  ForeignKey [FK_Calificaciones_Grupo_Materia]    Script Date: 10/26/2017 19:38:04 ******/
 ALTER TABLE [dbo].[Calificaciones]  WITH CHECK ADD  CONSTRAINT [FK_Calificaciones_Grupo_Materia] FOREIGN KEY([IdGrupoMateria])
