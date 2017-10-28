@@ -1,0 +1,43 @@
+select * from Alumno
+select * from Calificaciones
+select * from Carrera
+select * from Grupo
+select * from Grupo_Alumno
+select * from Grupo_Materia
+select * from Maestro
+select * from Maestro_Titulo
+select * from Materia
+select * from Materia_Maestro
+select * from Nivel
+select * from Salon
+select * from Titulo
+select * from Turno
+select * from Usuario
+-------------------------------------------------
+create view Prueba as
+select M.*, Ma.IdMaestro as Maestro, M.IdMaestro as Test
+from Maestro M
+left Join Materia_Maestro as Ma on Ma.IdMaestro = M.IdMaestro
+
+select * from Prueba
+------
+create view Prueba1 as
+select N.*, Ca.IdNivel as Nivel, N.IdNivel as Test1
+from Nivel N
+right Join Carrera as Ca on Ca.IdNivel = N.IdNivel
+
+select * from Prueba1
+------
+create view Prueba2 as
+select n.*, n.IdSalon as Salon, Gr.IdSalon as Test2
+from Salon n
+Full Join Grupo as Gr on Gr.IdSalon = n.IdSalon
+
+select * from Prueba2
+------
+create view Prueba3 as
+select n.*, n.IdSalon as Salon, Gr.IdSalon as Test3
+from Salon n
+Full Join Grupo as Gr on Gr.IdSalon = n.IdSalon
+
+select * from Prueba3
